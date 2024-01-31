@@ -1,0 +1,2 @@
+Dawid Gwazdacz - stworzenie pliku api.java
+Szymon Kurzyński - wygląd aplikacji oraz podłączenie api.java do projektu
