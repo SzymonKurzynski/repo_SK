@@ -1,0 +1,37 @@
+public class ZadCzerwiec2023 {
+    
+    public static void main(String[] args) {
+        int liczby=100;
+        boolean[] Lpierwsze = new boolean[liczby+1];
+        
+        sort(Lpierwsze);
+        wyswietlanie(Lpierwsze);
+    }
+    
+    static void sort(boolean[] Lpierwsze) {
+        int liczby=Lpierwsze.length-1;
+        double pierwiastek = Math.sqrt(liczby);
+        
+        
+        for (int x=0; x<=liczby; x++) {
+            Lpierwsze[x]=true;
+        }
+        
+        for (int x=2; x<=pierwiastek; x++) {
+            if (Lpierwsze[x]) {
+                for (int y=x*x; y<=liczby; y+=x) {
+                    Lpierwsze[y]=false;
+                }
+            }
+        }
+    }
+    
+    static void wyswietlanie(boolean[] Lpierwsze) {
+        System.out.println("Liczby pierwsze z przedzialu 2-100 ");
+        for (int x=2; x<Lpierwsze.length; x++) {
+            if (Lpierwsze[x]) {
+                System.out.println(x+". ");
+            }
+        }
+    }
+}
